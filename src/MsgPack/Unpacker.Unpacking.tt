@@ -76,7 +76,7 @@ foreach( var type in
 	if( IsNotCLSCompliant( type as Type ) )
 	{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#
@@ -111,7 +111,7 @@ foreach( var type in
 	if( IsNotCLSCompliant( type as Type ) )
 	{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#

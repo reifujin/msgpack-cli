@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -185,7 +185,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "encoding" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -276,7 +276,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "encoding" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 

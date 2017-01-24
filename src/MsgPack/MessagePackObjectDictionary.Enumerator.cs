@@ -25,7 +25,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -111,7 +111,7 @@ namespace MsgPack
 			internal Enumerator( MessagePackObjectDictionary dictionary )
 				: this()
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( dictionary != null );
 #endif // !UNITY
 
@@ -284,7 +284,7 @@ namespace MsgPack
 			internal DictionaryEnumerator( MessagePackObjectDictionary dictionary )
 				: this()
 			{
-				#if !UNITY
+				#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( dictionary != null );
 				#endif // !UNITY
 

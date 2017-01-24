@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Runtime.InteropServices;
@@ -85,7 +85,7 @@ namespace MsgPack
 		/// <param name="offset">Offset to read.</param>
 		public Float32Bits( byte[] bigEndianBytes, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( bigEndianBytes != null );
 			Contract.Assume( bigEndianBytes.Length - offset >= 4, bigEndianBytes.Length + "-" + offset + ">= 4" );
 #endif // !UNITY

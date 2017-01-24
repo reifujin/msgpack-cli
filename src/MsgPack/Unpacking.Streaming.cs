@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.IO;
@@ -65,7 +65,7 @@ namespace MsgPack
 		public static UnpackingStream UnpackByteStream( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -171,7 +171,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "encoding" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -199,7 +199,7 @@ namespace MsgPack
 			public SeekableUnpackingStream( Stream underlying, long rawLength )
 				: base( underlying, rawLength )
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( underlying.CanSeek );
 #endif // !UNITY
 				this._initialPosition = underlying.Position;

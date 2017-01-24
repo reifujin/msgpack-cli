@@ -22,7 +22,7 @@
 #define UNITY
 #endif
 
-#if !UNITY && !WINDOWS_PHONE
+#if !UNITY && !NETSTANDARD1_4 && !WINDOWS_PHONE
 using System;
 using System.Numerics;
 

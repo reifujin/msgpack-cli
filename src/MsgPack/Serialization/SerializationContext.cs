@@ -29,7 +29,7 @@ using System.Collections.Concurrent;
 #if SILVERLIGHT || NETFX_35
 using System.Collections.Generic;
 #endif // SILVERLIGHT || NETFX_35
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 #if NETFX_CORE
@@ -66,7 +66,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				return Interlocked.CompareExchange( ref _default, null, null );
 #else
 				lock( DefaultContextSyncRoot )
@@ -82,7 +82,7 @@ namespace MsgPack.Serialization
 					throw new ArgumentNullException( "value" );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Interlocked.Exchange( ref _default, value );
 #else
 				lock( DefaultContextSyncRoot )
@@ -112,7 +112,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( Contract.Result<SerializerRepository>() != null );
 #endif // !UNITY
 
@@ -155,7 +155,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( Contract.Result<SerializationCompatibilityOptions>() != null );
 #endif // !UNITY
 
@@ -175,7 +175,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( Enum.IsDefined( typeof( SerializationMethod ), Contract.Result<SerializationMethod>() ) );
 #endif // !UNITY
 
@@ -196,7 +196,7 @@ namespace MsgPack.Serialization
 					}
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -226,7 +226,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( Enum.IsDefined( typeof( EnumSerializationMethod ), Contract.Result<EnumSerializationMethod>() ) );
 #endif // !UNITY
 
@@ -247,7 +247,7 @@ namespace MsgPack.Serialization
 					}
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -269,7 +269,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( Enum.IsDefined( typeof( SerializationMethod ), Contract.Result<SerializationMethodGeneratorOption>() ) );
 #endif // !UNITY
 
@@ -293,7 +293,7 @@ namespace MsgPack.Serialization
 					}
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -420,7 +420,7 @@ namespace MsgPack.Serialization
 		/// </remarks>
 		public MessagePackSerializer<T> GetSerializer<T>( object providerParameter )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<MessagePackSerializer<T>>() != null );
 #endif // !UNITY
 
@@ -614,7 +614,7 @@ namespace MsgPack.Serialization
 				throw new ArgumentNullException( "targetType" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<IMessagePackSerializer>() != null );
 #endif // !UNITY
 

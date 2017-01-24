@@ -24,7 +24,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 

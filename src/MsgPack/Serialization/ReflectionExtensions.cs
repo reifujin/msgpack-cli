@@ -25,7 +25,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -59,7 +59,7 @@ namespace MsgPack.Serialization
 
 		public static CollectionTraits GetCollectionTraits( this Type source )
 		{
-#if !UNITY && DEBUG
+#if !UNITY && !NETSTANDARD1_4 && DEBUG
 			Contract.Assert( !source.GetContainsGenericParameters() );
 #endif // !UNITY
 			/*
@@ -456,7 +456,7 @@ namespace MsgPack.Serialization
 		private static bool FilterCollectionType( Type type, object filterCriteria )
 		{
 #if !NETFX_CORE
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( type.IsInterface );
 #endif // !UNITY
 			return type.Assembly == typeof( Array ).Assembly && ( type.Namespace == "System.Collections" || type.Namespace == "System.Collections.Generic" );

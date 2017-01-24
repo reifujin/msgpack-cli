@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -48,7 +48,7 @@ namespace MsgPack.Serialization.Reflection
 		/// </returns>
 		public static bool IsAssignableTo( this Type source, Type target )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( source != null );
 #endif // !UNITY
 

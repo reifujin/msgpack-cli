@@ -24,7 +24,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -261,7 +261,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "value" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -283,7 +283,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "value" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -344,13 +344,13 @@ namespace MsgPack
 		/// <param name="value"><see cref="SByte"/> value.</param>
 		/// <returns>This instance.</returns>
 		/// <exception cref="ObjectDisposedException">This instance has been disposed.</exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( sbyte value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -367,7 +367,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackInt8( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 		}
@@ -402,7 +402,7 @@ namespace MsgPack
 		public Packer Pack( byte value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -419,7 +419,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackUInt8( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 		}
@@ -454,7 +454,7 @@ namespace MsgPack
 		public Packer Pack( short value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -476,7 +476,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackInt16( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 		}
@@ -512,13 +512,13 @@ namespace MsgPack
 		/// <param name="value"><see cref="UInt16"/> value.</param>
 		/// <returns>This instance.</returns>
 		/// <exception cref="ObjectDisposedException">This instance has been disposed.</exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( ushort value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -540,7 +540,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackUInt16( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 		}
@@ -550,7 +550,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Maybe <see cref="UInt16"/> value.</param>
 		/// <returns>If <paramref name="value"/> has be packed successfully then true, otherwise false (normally, larger type required).</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		protected bool TryPackUInt16( ulong value )
@@ -582,7 +582,7 @@ namespace MsgPack
 		public Packer Pack( int value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -609,7 +609,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackInt32( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 
@@ -648,13 +648,13 @@ namespace MsgPack
 		/// <param name="value"><see cref="UInt32"/> value.</param>
 		/// <returns>This instance.</returns>
 		/// <exception cref="ObjectDisposedException">This instance has been disposed.</exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( uint value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -682,7 +682,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackUInt32( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 
@@ -693,7 +693,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Maybe <see cref="UInt32"/> value.</param>
 		/// <returns>If <paramref name="value"/> has be packed successfully then true, otherwise false (normally, larger type required).</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		protected bool TryPackUInt32( ulong value )
@@ -727,7 +727,7 @@ namespace MsgPack
 		public Packer Pack( long value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -759,7 +759,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackInt64( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 
@@ -797,13 +797,13 @@ namespace MsgPack
 		/// <param name="value"><see cref="UInt64"/> value.</param>
 		/// <returns>This instance.</returns>
 		/// <exception cref="ObjectDisposedException">This instance has been disposed.</exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( ulong value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.PrivatePackCore( value );
@@ -835,7 +835,7 @@ namespace MsgPack
 #pragma warning disable 168
 			var b = this.TryPackUInt64( value );
 #pragma warning restore 168
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( b );
 #endif // !UNITY
 
@@ -846,7 +846,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Maybe <see cref="UInt64"/> value.</param>
 		/// <returns>If <paramref name="value"/> has be packed successfully then true, otherwise false (normally, larger type required).</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		protected bool TryPackUInt64( ulong value )
@@ -986,7 +986,7 @@ namespace MsgPack
 				throw new ArgumentOutOfRangeException( "count", String.Format( CultureInfo.CurrentCulture, "'{0}' is negative.", "count" ) );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.VerifyNotDisposed();
@@ -996,7 +996,7 @@ namespace MsgPack
 
 		private void PrivatePackArrayHeaderCore( int count )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( 0 <= count );
 #endif // !UNITY
 			if ( count < 16 )
@@ -1046,7 +1046,7 @@ namespace MsgPack
 				throw new ArgumentOutOfRangeException( "count", String.Format( CultureInfo.CurrentCulture, "'{0}' is negative.", "count" ) );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.VerifyNotDisposed();
@@ -1056,7 +1056,7 @@ namespace MsgPack
 
 		private void PrivatePackMapHeaderCore( int count )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( 0 <= count );
 #endif // !UNITY
 
@@ -1152,7 +1152,7 @@ namespace MsgPack
 				throw new ArgumentOutOfRangeException( "length", String.Format( CultureInfo.CurrentCulture, "'{0}' is negative.", "length" ) );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.VerifyNotDisposed();
@@ -1172,7 +1172,7 @@ namespace MsgPack
 				throw new ArgumentOutOfRangeException( "length", String.Format( CultureInfo.CurrentCulture, "'{0}' is negative.", "length" ) );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.VerifyNotDisposed();
@@ -1182,7 +1182,7 @@ namespace MsgPack
 
 		private void PrivatePackRawHeaderCore( int length, bool isString )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( 0 <= length );
 #endif // !UNITY
 
@@ -1277,7 +1277,7 @@ namespace MsgPack
 		public Packer PackRaw( IEnumerable<byte> value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1306,7 +1306,7 @@ namespace MsgPack
 		public Packer PackRaw( IList<byte> value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1334,7 +1334,7 @@ namespace MsgPack
 		public Packer PackRaw( byte[] value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1418,7 +1418,7 @@ namespace MsgPack
 			}
 
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1443,7 +1443,7 @@ namespace MsgPack
 			}
 
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1453,7 +1453,7 @@ namespace MsgPack
 
 		private int PrivatePackRawBodyCore( IEnumerable<byte> value )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( value != null );
 #endif // !UNITY
 
@@ -1476,7 +1476,7 @@ namespace MsgPack
 
 		private int PrivatePackRawBodyCore( ICollection<byte> value, bool isImmutable )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( value != null );
 #endif // !UNITY
 
@@ -1559,7 +1559,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "encoding" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.VerifyNotDisposed();
@@ -1569,7 +1569,7 @@ namespace MsgPack
 
 		private void PrivatePackString( IEnumerable<char> value, Encoding encoding )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( encoding != null );
 #endif // !UNITY
 
@@ -1584,7 +1584,7 @@ namespace MsgPack
 
 		private void PrivatePackStringCore( IEnumerable<char> value, Encoding encoding )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( value != null );
 			Contract.Assert( encoding != null );
 #endif // !UNITY
@@ -1607,7 +1607,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "encoding" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 			this.VerifyNotDisposed();
@@ -1618,7 +1618,7 @@ namespace MsgPack
 
 		private void PrivatePackString( string value, Encoding encoding )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( encoding != null );
 #endif // !UNITY
 
@@ -1633,7 +1633,7 @@ namespace MsgPack
 
 		private void PrivatePackStringCore( string value, Encoding encoding )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( value != null );
 			Contract.Assert( encoding != null );
 #endif // !UNITY
@@ -1660,7 +1660,7 @@ namespace MsgPack
 		public Packer PackBinary( IEnumerable<byte> value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1689,7 +1689,7 @@ namespace MsgPack
 		public Packer PackBinary( IList<byte> value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1717,7 +1717,7 @@ namespace MsgPack
 		public Packer PackBinary( byte[] value )
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1851,7 +1851,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Maybe tiny <see cref="Byte"/> value.</param>
 		/// <returns>If <paramref name="value"/> has be packed successfully then true, otherwise false (normally, larger type required).</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		protected bool TryPackTinyUnsignedInteger( ulong value )
@@ -1874,7 +1874,7 @@ namespace MsgPack
 		public Packer PackNull()
 		{
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1904,7 +1904,7 @@ namespace MsgPack
 			}
 
 			this.VerifyNotDisposed();
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 

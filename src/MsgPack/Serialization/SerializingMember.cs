@@ -30,7 +30,7 @@ namespace MsgPack.Serialization
 	/// <summary>
 	///		Represents serializing member information.
 	/// </summary>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 	internal struct SerializingMember
 #else
 	internal sealed class SerializingMember

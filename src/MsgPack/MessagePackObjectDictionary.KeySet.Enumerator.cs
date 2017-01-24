@@ -25,7 +25,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -33,13 +33,13 @@ namespace MsgPack
 {
 	partial class MessagePackObjectDictionary
 	{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		partial class KeySet
 #else
 		partial class KeyCollection
 #endif // UNITY
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			/// <summary>
 			///		Enumerates the elements of a <see cref="MessagePackObjectDictionary.KeySet"/>.
 			/// </summary>
@@ -83,7 +83,7 @@ namespace MsgPack
 
 				internal Enumerator( MessagePackObjectDictionary dictionary )
 				{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 					Contract.Assert( dictionary != null );
 #endif // !UNITY
 

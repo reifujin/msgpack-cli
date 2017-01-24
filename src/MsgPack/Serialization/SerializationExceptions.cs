@@ -24,7 +24,7 @@
 
 using System;
 using System.ComponentModel;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -54,7 +54,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewValueTypeCannotBeNull( string name, Type memberType, Type declaringType )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( !String.IsNullOrEmpty( name ) );
 			Contract.Requires( memberType != null );
 			Contract.Requires( declaringType != null );
@@ -72,7 +72,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewValueTypeCannotBeNull( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -88,7 +88,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewTypeCannotSerialize( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -104,7 +104,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewTypeCannotDeserialize( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -122,7 +122,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewTypeCannotDeserialize( Type type, string memberName, Exception inner )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Requires( !String.IsNullOrEmpty( memberName ) );
 			Contract.Requires( inner != null );
@@ -147,7 +147,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewMissingItem( int index )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( index >= 0 );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -155,7 +155,7 @@ namespace MsgPack.Serialization
 			return new InvalidMessagePackStreamException( String.Format( CultureInfo.CurrentCulture, "Items at index '{0}' is missing.", index ) );
 		}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		/// <summary>
 		///		<strong>This is intended to MsgPack for CLI internal use. Do not use this type from application directly.</strong>
 		///		Returns new exception to notify that target type is not serializable because it does not have public default constructor.
@@ -164,7 +164,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		internal static Exception NewTargetDoesNotHavePublicDefaultConstructor( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -181,7 +181,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		internal static Exception NewTargetDoesNotHavePublicDefaultConstructorNorInitialCapacity( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -197,7 +197,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		internal static Exception NewNoSerializableFieldsException( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -213,7 +213,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewMissingProperty( string name )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( !String.IsNullOrEmpty( name ) );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -228,7 +228,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewUnexpectedEndOfStream()
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
 
@@ -243,7 +243,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewMissingAddMethod( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -276,7 +276,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewIsNotMapHeader()
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
 
@@ -291,7 +291,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewNotSupportedBecauseCannotInstanciateAbstractType( Type type )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -308,7 +308,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewTupleCardinarityIsNotMatch( int expectedTupleCardinality, int actualArrayLength )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( expectedTupleCardinality > 0 );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -324,7 +324,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewIsIncorrectStream( Exception innerException )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
 
@@ -338,7 +338,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewIsTooLargeCollection()
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
 
@@ -357,7 +357,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewNullIsProhibited( string memberName )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( !String.IsNullOrEmpty( memberName ) );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -373,7 +373,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewReadOnlyMemberItemsMustNotBeNull( string memberName )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( !String.IsNullOrEmpty( memberName ) );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -389,7 +389,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewStreamDoesNotContainCollectionForMember( string memberName )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( !String.IsNullOrEmpty( memberName ) );
 			Contract.Ensures( Contract.Result<Exception>() != null );
 #endif // !UNITY
@@ -406,7 +406,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewUnexpectedArrayLength( int expectedLength, int actualLength )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( expectedLength >= 0 );
 			Contract.Requires( actualLength >= 0 );
 			Contract.Ensures( Contract.Result<Exception>() != null );
@@ -425,7 +425,7 @@ namespace MsgPack.Serialization
 		/// <returns><see cref="Exception"/> instance. It will not be <c>null</c>.</returns>
 		public static Exception NewFailedToDeserializeMember( Type targetType, string memberName, Exception inner )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( targetType != null );
 			Contract.Requires( !String.IsNullOrEmpty( memberName ) );
 			Contract.Requires( inner != null );
@@ -437,7 +437,7 @@ namespace MsgPack.Serialization
 
 		internal static Exception NewUnpackToIsNotSupported( Type type, Exception inner )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( type != null );
 #endif // !UNITY
 			return new NotSupportedException( String.Format( CultureInfo.CurrentCulture, "This operation is not supported for '{0}' because it does not have accesible Add(T) method.", type ), inner );

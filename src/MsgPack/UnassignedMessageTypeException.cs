@@ -19,7 +19,10 @@
 #endregion -- License Terms --
 
 using System;
+
+#if !NETSTANDARD1_4
 using System.Runtime.Serialization;
+#endif
 
 namespace MsgPack
 {

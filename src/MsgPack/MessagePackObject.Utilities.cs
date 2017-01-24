@@ -26,7 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -34,7 +34,7 @@ using System.Linq;
 #if NETFX_CORE
 using System.Reflection;
 #endif
-using System.Runtime.Serialization;
+//using System.Runtime.Serialization;
 using System.Text;
 
 namespace MsgPack
@@ -536,7 +536,7 @@ namespace MsgPack
 			}
 
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( false, String.Format( "(this._handleOrTypeCode is string) but {0}", this._handleOrTypeCode.GetType() ) );
 #endif // !UNITY
 				return 0;
@@ -701,7 +701,7 @@ namespace MsgPack
 			}
 
 			// may be string
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( false, String.Format( "(this._handleOrTypeCode is string) but {0}", this._handleOrTypeCode.GetType() ) );
 #endif // !UNITY
 			// ReSharper disable HeuristicUnreachableCode
@@ -857,7 +857,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "type" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1046,7 +1046,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "packer" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1177,7 +1177,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "encoding" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1192,7 +1192,7 @@ namespace MsgPack
 			try
 			{
 				var asMessagePackString = this._handleOrTypeCode as MessagePackString;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( asMessagePackString != null );
 #endif // !UNITY
 
@@ -1228,7 +1228,7 @@ namespace MsgPack
 		public string AsStringUtf16()
 		{
 			VerifyUnderlyingType<byte[]>( this, null );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1241,7 +1241,7 @@ namespace MsgPack
 			try
 			{
 				MessagePackString asMessagePackString = this._handleOrTypeCode as MessagePackString;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( asMessagePackString != null );
 #endif // !UNITY
 
@@ -1561,7 +1561,7 @@ namespace MsgPack
 					return MessagePackExtendedTypeObject.Unpack( unchecked( ( byte ) this._value ), asExtendedTypeObject );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( false, "Unknwon type:" + this._handleOrTypeCode );
 #endif // !UNITY
 				return null;
@@ -1616,7 +1616,7 @@ namespace MsgPack
 					}
 					default:
 					{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 						Contract.Assert( false, "Unknwon type code:" + asType.TypeCode );
 #endif // !UNITY
 						// ReSharper disable once HeuristicUnreachableCode

@@ -25,7 +25,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -43,7 +43,7 @@ namespace MsgPack
 		{
 			var source = this._stream;
 			var buffer = this._scalarBuffer;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( source != null );
 			Contract.Assert( buffer != null );
 #endif // !UNITY

@@ -80,7 +80,7 @@ namespace MsgPack.Serialization
 		if ( notCls.Contains( type ) )
 		{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#
@@ -120,7 +120,7 @@ namespace MsgPack.Serialization
 		if ( notCls.Contains( type ) )
 		{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#

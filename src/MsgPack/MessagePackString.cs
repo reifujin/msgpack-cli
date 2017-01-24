@@ -24,7 +24,7 @@
 
 using System;
 using System.Diagnostics;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -65,7 +65,7 @@ namespace MsgPack
 
 		public MessagePackString( string decoded )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( decoded != null );
 #endif // !UNITY
 			this._decoded = decoded;
@@ -74,7 +74,7 @@ namespace MsgPack
 
 		public MessagePackString( byte[] encoded, bool isBinary )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( encoded != null );
 #endif // !UNITY
 			this._encoded = encoded;
@@ -263,7 +263,7 @@ namespace MsgPack
 				return false;
 			}
 
-#if !UNITY && !WINDOWS_PHONE
+#if !UNITY && !NETSTANDARD1_4 && !WINDOWS_PHONE
 			if ( _isFastEqualsDisabled == 0 )
 			{
 				try
@@ -297,7 +297,7 @@ namespace MsgPack
 			return true;
 		}
 
-#if !UNITY && !WINDOWS_PHONE
+#if !UNITY && !NETSTANDARD1_4 && !WINDOWS_PHONE
 #if SILVERLIGHT
 		private static int _isFastEqualsDisabled =
 			System.Windows.Application.Current.HasElevatedPermissions ? 0 : 1;

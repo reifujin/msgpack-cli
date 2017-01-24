@@ -24,7 +24,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Linq;
@@ -49,12 +49,12 @@ namespace MsgPack.Serialization.Reflection
 		///		or built closed generic interface type;
 		///		otherwise <c>false</c>.
 		/// </returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[Pure]
 #endif // !UNITY
 		public static bool Implements( this Type source, Type genericType )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( source != null );
 			Contract.Assert( genericType != null );
 			Contract.Assert( genericType.GetIsInterface() );
@@ -83,12 +83,12 @@ namespace MsgPack.Serialization.Reflection
 		/// </summary>
 		/// <param name="source">Target type.</param>
 		/// <returns>Simple name of type.</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[Pure]
 #endif // !UNITY
 		public static string GetName( this Type source )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( source != null );
 #endif // !UNITY
 			if ( !source.GetIsGenericType() )
@@ -114,12 +114,12 @@ namespace MsgPack.Serialization.Reflection
 		/// </summary>
 		/// <param name="source">Target type.</param>
 		/// <returns>Full name of type.</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[Pure]
 #endif // !UNITY
 		public static string GetFullName( this Type source )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( source != null );
 #endif // !UNITY
 

@@ -25,7 +25,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -40,7 +40,7 @@ namespace MsgPack
 	{
 		public override bool ReadBoolean( out Boolean result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -121,7 +121,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableBoolean( out Boolean? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -214,7 +214,7 @@ namespace MsgPack
 		
 		public override bool ReadByte( out Byte result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -347,7 +347,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableByte( out Byte? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -492,7 +492,7 @@ namespace MsgPack
 		
 		public override bool ReadSByte( out SByte result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -639,7 +639,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableSByte( out SByte? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -798,7 +798,7 @@ namespace MsgPack
 		
 		public override bool ReadInt16( out Int16 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -1005,7 +1005,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableInt16( out Int16? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -1224,7 +1224,7 @@ namespace MsgPack
 		
 		public override bool ReadUInt16( out UInt16 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -1417,7 +1417,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableUInt16( out UInt16? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -1622,7 +1622,7 @@ namespace MsgPack
 		
 		public override bool ReadInt32( out Int32 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -1919,7 +1919,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableInt32( out Int32? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -2228,7 +2228,7 @@ namespace MsgPack
 		
 		public override bool ReadUInt32( out UInt32 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -2511,7 +2511,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableUInt32( out UInt32? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -2806,7 +2806,7 @@ namespace MsgPack
 		
 		public override bool ReadInt64( out Int64 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -3193,7 +3193,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableInt64( out Int64? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -3592,7 +3592,7 @@ namespace MsgPack
 		
 		public override bool ReadUInt64( out UInt64 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -3965,7 +3965,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableUInt64( out UInt64? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -4350,7 +4350,7 @@ namespace MsgPack
 		
 		public override bool ReadSingle( out Single result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -4737,7 +4737,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableSingle( out Single? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -5136,7 +5136,7 @@ namespace MsgPack
 		
 		public override bool ReadDouble( out Double result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -5523,7 +5523,7 @@ namespace MsgPack
 		
 		public override bool ReadNullableDouble( out Double? result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -5922,7 +5922,7 @@ namespace MsgPack
 		
 		public override bool ReadBinary( out Byte[] result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -6135,7 +6135,7 @@ namespace MsgPack
 		
 		public override bool ReadString( out String result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -6420,7 +6420,7 @@ namespace MsgPack
 		
 		public override bool ReadObject( out MessagePackObject result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -8109,7 +8109,7 @@ namespace MsgPack
 		
 		public override bool ReadArrayLength( out Int64 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -8250,7 +8250,7 @@ namespace MsgPack
 		
 		public override bool ReadMapLength( out Int64 result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;
@@ -8391,7 +8391,7 @@ namespace MsgPack
 		
 		public override bool ReadMessagePackExtendedTypeObject( out MessagePackExtendedTypeObject result )
 		{
-		#if !UNITY
+		#if !UNITY && !NETSTANDARD1_4
 			this.EnsureNotInSubtreeMode();
 		#endif // !UNITY
 			var source = this._stream;

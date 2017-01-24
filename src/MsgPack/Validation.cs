@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -94,7 +94,7 @@ namespace MsgPack
 				}
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( position >= 0 );
 #endif // !UNITY
 

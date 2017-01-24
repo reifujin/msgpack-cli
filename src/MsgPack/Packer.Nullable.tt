@@ -90,7 +90,7 @@ foreach( var __type in
 	if( __IsNotCLSCompliant( __type ) )
 	{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#

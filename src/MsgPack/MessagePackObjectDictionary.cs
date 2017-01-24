@@ -27,7 +27,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -88,7 +88,7 @@ namespace MsgPack
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				this.AssertInvariant();
 #endif // !UNITY
 				return this._dictionary == null ? this._keys.Count : this._dictionary.Count;
@@ -129,7 +129,7 @@ namespace MsgPack
 					ThrowKeyNotNilException( "key" );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -151,7 +151,7 @@ namespace MsgPack
 
 				this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 
 				this.AssertInvariant();
@@ -160,7 +160,7 @@ namespace MsgPack
 			}
 		}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		/// <summary>
 		///		Gets an <see cref="KeySet"/> containing the keys of the <see cref="MessagePackObjectDictionary"/>.
 		/// </summary>
@@ -194,7 +194,7 @@ namespace MsgPack
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				this.AssertInvariant();
 #endif // !UNITY
 				return new KeyCollection( this );
@@ -216,7 +216,7 @@ namespace MsgPack
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				this.AssertInvariant();
 #endif // !UNITY
 				return new ValueCollection( this );
@@ -271,7 +271,7 @@ namespace MsgPack
 					throw new ArgumentNullException( "key" );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -299,7 +299,7 @@ namespace MsgPack
 
 				this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -355,7 +355,7 @@ namespace MsgPack
 				throw new ArgumentOutOfRangeException( "initialCapacity" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -392,7 +392,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "dictionary" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -442,7 +442,7 @@ namespace MsgPack
 			}
 		}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[Conditional( "DEBUG" )]
 		private void AssertInvariant()
 		{
@@ -597,12 +597,12 @@ namespace MsgPack
 				ThrowKeyNotNilException( "key" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				this.AssertInvariant();
 #endif // !UNITY
 			return
@@ -623,7 +623,7 @@ namespace MsgPack
 		/// </remarks>
 		public bool ContainsValue( MessagePackObject value )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				this.AssertInvariant();
 #endif // !UNITY
 			return
@@ -699,7 +699,7 @@ namespace MsgPack
 				ThrowKeyNotNilException( "key" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 
 			this.AssertInvariant();
@@ -762,7 +762,7 @@ namespace MsgPack
 
 			this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -772,7 +772,7 @@ namespace MsgPack
 
 		private void AddCore( MessagePackObject key, MessagePackObject value, bool allowOverwrite )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( !key.IsNil );
 #endif // !UNITY
 
@@ -860,7 +860,7 @@ namespace MsgPack
 
 			this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -877,7 +877,7 @@ namespace MsgPack
 
 			this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -914,7 +914,7 @@ namespace MsgPack
 
 			this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -924,7 +924,7 @@ namespace MsgPack
 
 		private bool RemoveCore( MessagePackObject key, MessagePackObject value, bool checkValue )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( !key.IsNil );
 			this.AssertInvariant();
 #endif // !UNITY
@@ -981,7 +981,7 @@ namespace MsgPack
 
 			this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -998,7 +998,7 @@ namespace MsgPack
 
 			this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1022,7 +1022,7 @@ namespace MsgPack
 		{
 			this.VerifyIsNotFrozen();
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			this.AssertInvariant();
 #endif // !UNITY
 

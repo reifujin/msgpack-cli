@@ -24,7 +24,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Linq;
@@ -48,7 +48,7 @@ namespace MsgPack
 		public static void CopyTo<TSource, TDestination>( IEnumerable<TSource> source, int sourceCount, int index, TDestination[] array, int arrayIndex, int count, Func<TSource, TDestination> converter )
 		{
 			ValidateCopyToArguments( sourceCount, index, array, arrayIndex, count );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( converter != null );
 #endif // !UNITY
 

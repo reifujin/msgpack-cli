@@ -48,7 +48,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="Boolean" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -76,7 +76,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="Boolean" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -108,7 +108,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="Byte" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -136,7 +136,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="Byte" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -168,7 +168,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="SByte" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -196,7 +196,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="SByte" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -228,7 +228,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="Int16" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -256,7 +256,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="Int16" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -288,7 +288,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="UInt16" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -316,7 +316,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="UInt16" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -348,7 +348,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="Int32" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -376,7 +376,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="Int32" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -408,7 +408,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="UInt32" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -436,7 +436,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="UInt32" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -468,7 +468,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="Int64" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -496,7 +496,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="Int64" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -528,7 +528,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="UInt64" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -556,7 +556,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="UInt64" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -588,7 +588,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="Single" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -616,7 +616,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="Single" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]
@@ -648,7 +648,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the <see cref="Double" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Using nullable return value is very slow" )]
@@ -676,7 +676,7 @@ namespace MsgPack
 		/// <exception cref="MessageTypeException">
 		///		A value read from data source is not compatible for the nullable <see cref="Double" /> type.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[System.Diagnostics.CodeAnalysis.SuppressMessage( "Microsoft.Design", "CA1021:AvoidOutParameters", MessageId = "0#", Justification = "Adopting same pattern as non-nullables" )]

@@ -25,7 +25,7 @@
 using System;
 using System.Collections.Generic;
 using System.Security;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -71,17 +71,17 @@ namespace MsgPack.Serialization
 			// ReSharper disable once RedundantIfElseBlock
 			else
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( keyType.GetIsGenericType() );
 				Contract.Assert( !keyType.GetIsGenericTypeDefinition() );
 #endif // !UNITY
 				var type = genericDefinitionMatched as Type;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( type != null );
 				Contract.Assert( type.GetIsGenericTypeDefinition() );
 #endif // !UNITY
 				var result = Activator.CreateInstance( type.MakeGenericType( keyType.GetGenericArguments() ), context );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( result != null );
 #endif // !UNITY
 				return result;

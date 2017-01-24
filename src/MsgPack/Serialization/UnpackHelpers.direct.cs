@@ -340,7 +340,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack SByte type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]
@@ -373,7 +373,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack SByte type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]
@@ -406,7 +406,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack UInt16 type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]
@@ -439,7 +439,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack UInt16 type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]
@@ -472,7 +472,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack UInt32 type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]
@@ -505,7 +505,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack UInt32 type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]
@@ -538,7 +538,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack UInt64 type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]
@@ -571,7 +571,7 @@ namespace MsgPack.Serialization
 		/// <exception cref="System.Runtime.Serialization.SerializationException">
 		///		Failed to unpack UInt64 type value from underlying stream.
 		/// </exception>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		[EditorBrowsable( EditorBrowsableState.Never )]

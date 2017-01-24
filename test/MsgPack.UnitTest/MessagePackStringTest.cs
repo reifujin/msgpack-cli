@@ -136,7 +136,7 @@ namespace MsgPack
 			Assert.AreEqual( String.Empty, target.ToString() );
 		}
 
-#if !UNITY && !WINDOWS_PHONE
+#if !UNITY && !NETSTANDARD1_4 && !WINDOWS_PHONE
 		[Test]
 		public void TestEqualsFullTrust()
 		{

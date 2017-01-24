@@ -27,7 +27,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -44,7 +44,7 @@ namespace MsgPack
 		[DebuggerDisplay( "Count={Count}" )]
 		[DebuggerTypeProxy( typeof( CollectionDebuggerProxy<> ) )]
 		[SuppressMessage( "Microsoft.Design", "CA1034:NestedTypesShouldNotBeVisible", Justification = "ICollection implementing dictionary should return ICollection implementing values." )]
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		public sealed partial class KeySet :
 #if !NETFX_35
 			ISet<MessagePackObject>,
@@ -83,13 +83,13 @@ namespace MsgPack
 				get { return this; }
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			internal KeySet( MessagePackObjectDictionary dictionary )
 #else
 			internal KeyCollection( MessagePackObjectDictionary dictionary )
 #endif // !UNITY
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( dictionary != null );
 #endif // !UNITY
 
@@ -110,7 +110,7 @@ namespace MsgPack
 					throw new ArgumentNullException( "array" );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -182,7 +182,7 @@ namespace MsgPack
 					throw new ArgumentException( "Specified array is too small to complete copy operation.", "array" );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -222,7 +222,7 @@ namespace MsgPack
 				throw new NotSupportedException();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 #if !NETFX_35
 			bool ISet<MessagePackObject>.Add( MessagePackObject item )
 			{

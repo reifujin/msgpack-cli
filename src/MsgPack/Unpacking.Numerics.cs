@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.IO;
@@ -97,7 +97,7 @@ namespace MsgPack
 		public static UnpackingResult<Byte> UnpackByte( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -141,7 +141,7 @@ namespace MsgPack
 		public static Byte UnpackByte( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -191,7 +191,7 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(byte[])"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<SByte> UnpackSByte( byte[] source )
@@ -226,13 +226,13 @@ namespace MsgPack
 		/// <remarks>
 		///		When the type of packed value is not known, use <see cref="UnpackObject(byte[], int)"/> instead.
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<SByte> UnpackSByte( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -273,13 +273,13 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(Stream)"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static SByte UnpackSByte( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -364,7 +364,7 @@ namespace MsgPack
 		public static UnpackingResult<Int16> UnpackInt16( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -408,7 +408,7 @@ namespace MsgPack
 		public static Int16 UnpackInt16( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -458,7 +458,7 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(byte[])"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<UInt16> UnpackUInt16( byte[] source )
@@ -493,13 +493,13 @@ namespace MsgPack
 		/// <remarks>
 		///		When the type of packed value is not known, use <see cref="UnpackObject(byte[], int)"/> instead.
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<UInt16> UnpackUInt16( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -540,13 +540,13 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(Stream)"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UInt16 UnpackUInt16( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -631,7 +631,7 @@ namespace MsgPack
 		public static UnpackingResult<Int32> UnpackInt32( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -675,7 +675,7 @@ namespace MsgPack
 		public static Int32 UnpackInt32( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -725,7 +725,7 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(byte[])"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<UInt32> UnpackUInt32( byte[] source )
@@ -760,13 +760,13 @@ namespace MsgPack
 		/// <remarks>
 		///		When the type of packed value is not known, use <see cref="UnpackObject(byte[], int)"/> instead.
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<UInt32> UnpackUInt32( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -807,13 +807,13 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(Stream)"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UInt32 UnpackUInt32( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -898,7 +898,7 @@ namespace MsgPack
 		public static UnpackingResult<Int64> UnpackInt64( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -942,7 +942,7 @@ namespace MsgPack
 		public static Int64 UnpackInt64( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -992,7 +992,7 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(byte[])"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<UInt64> UnpackUInt64( byte[] source )
@@ -1027,13 +1027,13 @@ namespace MsgPack
 		/// <remarks>
 		///		When the type of packed value is not known, use <see cref="UnpackObject(byte[], int)"/> instead.
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UnpackingResult<UInt64> UnpackUInt64( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1074,13 +1074,13 @@ namespace MsgPack
 		///			When the type of packed value is not known, use <see cref="UnpackObject(Stream)"/> instead.
 		///		</para>
 		///	</remarks>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public static UInt64 UnpackUInt64( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1165,7 +1165,7 @@ namespace MsgPack
 		public static UnpackingResult<Single> UnpackSingle( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1209,7 +1209,7 @@ namespace MsgPack
 		public static Single UnpackSingle( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1294,7 +1294,7 @@ namespace MsgPack
 		public static UnpackingResult<Double> UnpackDouble( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -1338,7 +1338,7 @@ namespace MsgPack
 		public static Double UnpackDouble( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 

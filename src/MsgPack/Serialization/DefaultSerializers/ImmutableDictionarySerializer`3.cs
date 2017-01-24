@@ -87,7 +87,7 @@ namespace MsgPack.Serialization.DefaultSerializers
 			}
 
 			var result = method.MakeGenericMethod( typeof( TKey ), typeof( TValue ) );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			return result.CreateDelegate( typeof( Func<KeyValuePair<TKey, TValue>[], T> ) ) as Func<KeyValuePair<TKey, TValue>[], T>;
 #else
 			return Delegate.CreateDelegate( typeof( Func<KeyValuePair<TKey, TValue>[], T> ), result ) as Func<KeyValuePair<TKey, TValue>[], T>;

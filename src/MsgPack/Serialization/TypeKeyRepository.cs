@@ -24,7 +24,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 #if NETFX_CORE
@@ -178,7 +178,7 @@ namespace MsgPack.Serialization
 
 		public bool Register( Type type, object entry, bool allowOverwrite )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assert( entry != null );
 #endif // !UNITY
 

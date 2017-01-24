@@ -24,7 +24,7 @@
 
 using System;
 using System.Collections.Generic;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Linq;
@@ -61,7 +61,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "source" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -97,7 +97,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "context" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -393,7 +393,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "source" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -429,7 +429,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "context" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -490,7 +490,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "source" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -525,7 +525,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "context" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -570,7 +570,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "source" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -604,7 +604,7 @@ namespace MsgPack
 				throw new ArgumentNullException( "context" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 

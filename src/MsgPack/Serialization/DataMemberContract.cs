@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -35,7 +35,7 @@ namespace MsgPack.Serialization
 	/// <summary>
 	///		Represents member's data contract.
 	/// </summary>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 	internal struct DataMemberContract
 #else
 	internal sealed class DataMemberContract
@@ -55,7 +55,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( !String.IsNullOrEmpty( Contract.Result<string>() ) );
 #endif // !UNITY
 
@@ -75,7 +75,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( Contract.Result<int>() >= -1 );
 #endif // !UNITY
 
@@ -111,7 +111,7 @@ namespace MsgPack.Serialization
 		/// <param name="member">The target member.</param>
 		public DataMemberContract( MemberInfo member )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( member != null );
 #endif // !UNITY
 
@@ -129,7 +129,7 @@ namespace MsgPack.Serialization
 		/// <param name="id">The ID of the member. This value cannot be negative and must be unique in the type.</param>
 		public DataMemberContract( MemberInfo member, string name, NilImplication nilImplication, int? id )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( member != null );
 #endif // !UNITY
 
@@ -150,7 +150,7 @@ namespace MsgPack.Serialization
 		/// <param name="attribute">The MessagePack member attribute.</param>
 		public DataMemberContract( MemberInfo member, MessagePackMemberAttribute attribute )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Requires( member != null );
 			Contract.Requires( attribute != null );
 #endif // !UNITY

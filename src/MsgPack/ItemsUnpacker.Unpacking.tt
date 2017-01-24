@@ -33,7 +33,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.Globalization;
@@ -130,7 +130,7 @@ private void WriteReadBody( string typeName, string fullTypeName, bool isForSubt
 	if( !isForSubtree )
 	{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 	this.EnsureNotInSubtreeMode();
 #endif // !UNITY
 <#+

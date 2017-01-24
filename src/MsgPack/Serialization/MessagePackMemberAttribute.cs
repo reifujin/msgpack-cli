@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -75,7 +75,7 @@ namespace MsgPack.Serialization
 		{
 			get
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Ensures( Enum.IsDefined( typeof( NilImplication ), Contract.Result<NilImplication>() ) );
 #endif // !UNITY
 
@@ -97,7 +97,7 @@ namespace MsgPack.Serialization
 					}
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 

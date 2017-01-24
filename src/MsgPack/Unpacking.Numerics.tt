@@ -70,7 +70,7 @@ Func<Type,bool> __isClsCompliant =
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.IO;
@@ -117,7 +117,7 @@ foreach( var __type in __numericTypes )
 	if( !__isClsCompliant( __type ) )
 	{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#
@@ -159,7 +159,7 @@ foreach( var __type in __numericTypes )
 	if( !__isClsCompliant( __type ) )
 	{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#
@@ -168,7 +168,7 @@ foreach( var __type in __numericTypes )
 		public static UnpackingResult<#= "<" + __type.Name + ">" #> Unpack<#= __type.Name #>( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -213,7 +213,7 @@ foreach( var __type in __numericTypes )
 	if( !__isClsCompliant( __type ) )
 	{
 #>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 <#
@@ -222,7 +222,7 @@ foreach( var __type in __numericTypes )
 		public static <#= __type.Name #> Unpack<#= __type.Name #>( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 

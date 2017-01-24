@@ -23,7 +23,7 @@
 #endif
 
 using System;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -36,7 +36,10 @@ namespace MsgPack
 	{
 		public static sbyte ToSByte( byte[] buffer, int offset )
 		{
-#if !UNITY
+            byte[] my;
+            my = buffer ?? throw new ArgumentNullException(nameof(buffer));
+
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( sbyte ) );
 #endif // !UNITY
 
@@ -48,7 +51,7 @@ namespace MsgPack
 
 		public static short ToInt16( byte[] buffer, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( short ) );
 #endif // !UNITY
 
@@ -60,7 +63,7 @@ namespace MsgPack
 
 		public static int ToInt32( byte[] buffer, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( int ) );
 #endif // !UNITY
 
@@ -72,7 +75,7 @@ namespace MsgPack
 
 		public static long ToInt64( byte[] buffer, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( long ) );
 #endif // !UNITY
 
@@ -86,7 +89,7 @@ namespace MsgPack
 
 		public static byte ToByte( byte[] buffer, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( byte ) );
 #endif // !UNITY
 
@@ -95,7 +98,7 @@ namespace MsgPack
 
 		public static ushort ToUInt16( byte[] buffer, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( ushort ) );
 #endif // !UNITY
 
@@ -107,7 +110,7 @@ namespace MsgPack
 
 		public static uint ToUInt32( byte[] buffer, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( uint ) );
 #endif // !UNITY
 
@@ -119,7 +122,7 @@ namespace MsgPack
 
 		public static ulong ToUInt64( byte[] buffer, int offset )
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Assume( buffer.Length >= offset + sizeof( ulong ) );
 #endif // !UNITY
 

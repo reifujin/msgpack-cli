@@ -22,7 +22,7 @@
 #define UNITY
 #endif
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;

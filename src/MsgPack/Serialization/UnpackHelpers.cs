@@ -26,7 +26,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using MsgPack.Serialization.DefaultSerializers;
@@ -79,7 +79,7 @@ namespace MsgPack.Serialization
 				throw SerializationExceptions.NewIsNotArrayHeader();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -141,7 +141,7 @@ namespace MsgPack.Serialization
 				throw SerializationExceptions.NewIsNotArrayHeader();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -212,7 +212,7 @@ namespace MsgPack.Serialization
 				throw SerializationExceptions.NewIsNotArrayHeader();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -275,7 +275,7 @@ namespace MsgPack.Serialization
 				throw SerializationExceptions.NewIsNotArrayHeader();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -345,7 +345,7 @@ namespace MsgPack.Serialization
 				throw SerializationExceptions.NewIsNotArrayHeader();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -415,7 +415,7 @@ namespace MsgPack.Serialization
 				throw SerializationExceptions.NewIsNotMapHeader();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -490,7 +490,7 @@ namespace MsgPack.Serialization
 				throw SerializationExceptions.NewIsNotMapHeader();
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 

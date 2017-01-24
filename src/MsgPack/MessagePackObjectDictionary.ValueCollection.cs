@@ -27,7 +27,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 
@@ -76,7 +76,7 @@ namespace MsgPack
 
 			internal ValueCollection( MessagePackObjectDictionary dictionary )
 			{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.Assert( dictionary != null );
 #endif // !UNITY
 
@@ -97,7 +97,7 @@ namespace MsgPack
 					throw new ArgumentNullException( "array" );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -170,7 +170,7 @@ namespace MsgPack
 					throw new ArgumentException( "Specified array is too small to complete copy operation.", "array" );
 				}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 				Contract.EndContractBlock();
 #endif // !UNITY
 

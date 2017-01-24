@@ -36,7 +36,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Value to serialize.</param>
 		/// <returns>This packer instance.</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( SByte? value )
@@ -66,7 +66,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Value to serialize.</param>
 		/// <returns>This packer instance.</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( UInt16? value )
@@ -87,7 +87,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Value to serialize.</param>
 		/// <returns>This packer instance.</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( UInt32? value )
@@ -108,7 +108,7 @@ namespace MsgPack
 		/// </summary>
 		/// <param name="value">Value to serialize.</param>
 		/// <returns>This packer instance.</returns>
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 		[CLSCompliant( false )]
 #endif // !UNITY
 		public Packer Pack( UInt64? value )

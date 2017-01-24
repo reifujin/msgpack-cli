@@ -31,7 +31,7 @@ using System.Collections.Generic;
 #else
 using System.Collections.Concurrent;
 #endif // SILVERLIGHT || NETFX_35 || UNITY
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 #if !WINDOWS_PHONE && !NETFX_35 && !XAMIOS && !XAMDROID && !UNITY
@@ -70,7 +70,7 @@ namespace MsgPack.Serialization
 		[Obsolete( "Use Get<T>() instead." )]
 		public static MessagePackSerializer<T> Create<T>()
 		{
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<MessagePackSerializer<T>>() != null );
 #endif // !UNITY
 
@@ -323,7 +323,7 @@ namespace MsgPack.Serialization
 				throw new ArgumentNullException( "context" );
 			}
 
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.Ensures( Contract.Result<IMessagePackSerializer>() != null );
 #endif // !UNITY
 

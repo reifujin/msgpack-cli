@@ -28,7 +28,7 @@ using MsgPack.Serialization.Reflection;
 
 namespace MsgPack.Serialization
 {
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 	/// <summary>
 	///		Utilities related to member/type ID.
 	/// </summary>

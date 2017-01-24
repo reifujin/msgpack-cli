@@ -70,7 +70,7 @@ var __methods = new []
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 using System.Diagnostics.Contracts;
 #endif // !UNITY
 using System.IO;
@@ -197,7 +197,7 @@ foreach( var __method in __methods )
 		public static UnpackingResult<#= "<" + __method.Item2 + ">" #> Unpack<#= __method.Item1 #>( byte[] source, int offset )
 		{
 			ValidateByteArray( source, offset );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
@@ -251,7 +251,7 @@ foreach( var __method in __methods )
 		public static <#= __method.Item2 #> Unpack<#= __method.Item1 #>( Stream source )
 		{
 			ValidateStream( source );
-#if !UNITY
+#if !UNITY && !NETSTANDARD1_4
 			Contract.EndContractBlock();
 #endif // !UNITY
 
